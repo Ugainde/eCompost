@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composting Steps</title>
+    <!-- Shoelace Setup -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="libs/gsap.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="compost.html">Compost</a></li>
+          <li><a href="dosanddonts.html">Do’s & Don’ts</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="steps.html" class="active">Guide</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="steps-container">
+      <div class="mountain-scroll" id="mountain-scroll">
+        <img
+          src="images/mountain.jpg"
+          alt="Mountain Path"
+          class="mountain-bg"
+        />
+
+        <!-- Step Dots with Tooltips -->
+        <sl-tooltip content="Step 1: Getting Started" placement="top">
+          <div class="step-dot" style="top: 60%; left: 10%" data-step="1">
+            1
+          </div>
+        </sl-tooltip>
+
+        <sl-tooltip content="Step 2: Setting Up Bin" placement="top">
+          <div class="step-dot" style="top: 45%; left: 35%" data-step="2">
+            2
+          </div>
+        </sl-tooltip>
+
+        <sl-tooltip content="Step 3: Materials" placement="top">
+          <div class="step-dot" style="top: 30%; left: 55%" data-step="3">
+            3
+          </div>
+        </sl-tooltip>
+
+        <sl-tooltip content="Step 4: Maintenance" placement="top">
+          <div class="step-dot" style="top: 50%; left: 75%" data-step="4">
+            4
+          </div>
+        </sl-tooltip>
+
+        <sl-tooltip content="Step 5: Harvesting" placement="top">
+          <div class="step-dot" style="top: 65%; left: 90%" data-step="5">
+            5
+          </div>
+        </sl-tooltip>
+      </div>
+
+      <!-- Grass Foreground -->
+      <img
+        src="images/grass.png"
+        alt="Grass foreground"
+        class="grass-foreground"
+        id="grass"
+      />
+    </main>
+
+    <!-- Shoelace Dialogs -->
+    <sl-dialog label="Step 1: Getting Started" id="step1">
+      Begin your composting journey by choosing a dry, shaded spot near a water
+      source.
+      <sl-button slot="footer" variant="primary" onclick="closeDialog(1)"
+        >Close</sl-button
+      >
+    </sl-dialog>
+
+    <sl-dialog label="Step 2: Setting Up Your Bin" id="step2">
+      Use a compost bin or create a pile. Start with coarse materials for
+      airflow.
+      <sl-button slot="footer" variant="primary" onclick="closeDialog(2)"
+        >Close</sl-button
+      >
+    </sl-dialog>
+
+    <sl-dialog label="Step 3: Materials" id="step3">
+      This next step is crucial. Make sure you start your compost with the right
+      mix of materials: greens (like food scraps and grass clippings) and browns
+      (like dried leaves, cardboard, and paper). Balancing these layers ensures
+      healthy decomposition and nutrient-rich soil.
+      <sl-button slot="footer" variant="primary" onclick="closeDialog(3)"
+        >Close</sl-button
+      >
+    </sl-dialog>
+
+    <sl-dialog label="Step 4: Maintenance" id="step4">
+      Turn the pile weekly to aerate and maintain moisture like a damp sponge.
+      <sl-button slot="footer" variant="primary" onclick="closeDialog(4)"
+        >Close</sl-button
+      >
+    </sl-dialog>
+
+    <sl-dialog label="Step 5: Harvesting" id="step5">
+      When your compost is dark and crumbly with an earthy smell, it’s ready to
+      use in your garden!
+      <sl-button slot="footer" variant="primary" onclick="closeDialog(5)"
+        >Close</sl-button
+      >
+    </sl-dialog>
+
+    <script src="js/steps.js"></script>
+  </body>
+</html>

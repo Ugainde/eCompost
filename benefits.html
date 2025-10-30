@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eCompost | Benefits</title>
+    <!-- Shoelace Setup -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="libs/gsap.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="benefits-page">
+    <header class="navbar">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="compost.html">Compost</a></li>
+          <li><a href="dosanddonts.html">Do’s & Don’ts</a></li>
+          <li><a href="benefits.html" class="active">Benefits</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="steps.html">Guide</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Background elements -->
+      <img
+        src="images/mountain.jpg"
+        class="background mountain"
+        alt="Mountain"
+      />
+      <img src="images/grass.png" class="foreground grass" alt="Grass" />
+
+      <section class="content benefits-content nature-carousel">
+        <!-- Carousel of benefits -->
+        <sl-carousel
+          pagination
+          loop
+          autoplay
+          style="width: 80%; max-width: 900px; margin: auto"
+        >
+          <sl-carousel-item>
+            <img src="images/benefit1.jpg" alt="Reduce landfill waste" />
+            <h3>Reduce Landfill Waste</h3>
+            <p>
+              Composting diverts organic waste from landfills, reducing methane
+              emissions.
+            </p>
+          </sl-carousel-item>
+          <sl-carousel-item>
+            <img src="images/benefit2.jpg" alt="Enhance soil health" />
+            <h3>Enhance Soil Health</h3>
+            <p>
+              Compost improves soil texture, water retention, and nutrient
+              balance.
+            </p>
+          </sl-carousel-item>
+          <sl-carousel-item>
+            <img src="images/benefit3.jpg" alt="Save resources" />
+            <h3>Save Resources</h3>
+            <p>
+              Less chemical fertilizer use means lower cost and environmental
+              impact.
+            </p>
+          </sl-carousel-item>
+        </sl-carousel>
+      </section>
+
+      <!-- Compost Bin Statistics Animation -->
+      <section class="bin-stats-section">
+        <div class="bin-container">
+          <img src="images/bin.png" alt="Compost Bin" class="bin-image" />
+          <div class="stat stat1">🌱 30% less landfill waste</div>
+          <div class="stat stat2">💧 20% improved soil moisture</div>
+          <div class="stat stat3">🌍 Cuts CO₂ by 1.3 tons/year</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/transition.js"></script>
+    <script src="js/scrollEffects.js"></script>
+    <script src="js/benefits.js"></script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eCompost | Tips</title>
+
+    <!-- Shoelace Setup -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="tips-page">
+    <header class="navbar">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="compost.html">Compost</a></li>
+          <li><a href="dosanddonts.html">Do’s & Don’ts</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a class="active" href="tips.html">Tips</a></li>
+          <li><a href="steps.html">Guide</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Background -->
+    <img src="images/mountain.jpg" alt="Mountain" class="background mountain" />
+    <img src="images/grass.png" alt="Grass" class="foreground grass" />
+    <main>
+      <section class="flip-card-container">
+        <!-- 6 Flip Cards (2 rows x 3 columns) -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Common Mistakes</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                Don't add meat or dairy, avoid plastic, and turn your compost
+                regularly.
+              </p>
+              <sl-tooltip
+                content="Avoiding these mistakes ensures your compost decomposes properly and remains odor-free."
+              >
+                <sl-icon name="info-circle" class="info-icon"></sl-icon>
+              </sl-tooltip>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Best Practices</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                Mix greens and browns evenly, keep moisture balanced, and aerate
+                weekly.
+              </p>
+              <sl-tooltip
+                content="Balancing nitrogen and carbon materials maintains ideal composting conditions."
+              >
+                <sl-icon name="info-circle" class="info-icon"></sl-icon>
+              </sl-tooltip>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Materials to Avoid</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>Plastic, metal, glass, diseased plants, and pet waste.</p>
+              <sl-tooltip
+                content="These materials don’t decompose and can contaminate your compost."
+              >
+                <sl-icon name="info-circle" class="info-icon"></sl-icon>
+              </sl-tooltip>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Materials to Add</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                Fruit and vegetable scraps, coffee grounds, leaves, and small
+                branches.
+              </p>
+              <sl-tooltip
+                content="Adding these helps balance compost nutrients and speed decomposition."
+              >
+                <sl-icon name="info-circle" class="info-icon"></sl-icon>
+              </sl-tooltip>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Moisture Control</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>Keep compost moist like a damp sponge, not soaked.</p>
+              <sl-tooltip
+                content="Too much moisture blocks airflow; too little slows decomposition."
+              >
+                <sl-icon name="info-circle" class="info-icon"></sl-icon>
+              </sl-tooltip>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Aeration</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>
+                Turn the pile regularly to add oxygen and speed up
+                decomposition.
+              </p>
+              <sl-tooltip
+                content="Oxygen helps microbes break down materials faster."
+              >
+                <sl-icon name="info-circle" class="info-icon"></sl-icon>
+              </sl-tooltip>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/tips.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/scrollEffects.js"></script>
+  </body>
+</html>

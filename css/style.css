@@ -1,0 +1,805 @@
+/* ==================== GLOBAL RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #6da2be;
+  overflow-x: hidden;
+}
+
+/* ==================== NAVIGATION ==================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  background: transparent; /* or whatever you need */
+  display: flex;
+}
+
+.navbar nav {
+  width: 100%; /* make nav fill the header */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly; /* evenly space the links */
+  list-style: none;
+  width: 100%; /* full width of nav */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  text-align: center;
+  flex: 1; /* equal space per link */
+}
+
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  color: #2d5a27;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #3fa34d;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to top, #eafae5, #d6f3c4);
+}
+
+/* Mountain background */
+.mountain {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Grass foreground */
+.grass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Compost bin */
+.compost-bin {
+  position: absolute;
+  bottom: 15%; /* sits just above grass */
+  right: 10%; /* move towards right */
+  width: 750px; /* smaller size */
+  height: auto; /* maintain aspect ratio */
+  z-index: 2; /* behind grass */
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hero text */
+.hero-text {
+  position: absolute;
+  bottom: 20%; /* slightly above compost bin */
+  left: 10%; /* on left side */
+  color: #2d5a27;
+  z-index: 4;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 10px;
+  animation: fadeInUp 2s ease-out;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== CLICK TO START PROMPT ==================== */
+.click-start {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.3rem;
+  animation: fadeInUp 2s ease-in-out;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.click-start p {
+  margin-bottom: 5px;
+}
+
+.click-start .arrow {
+  display: inline-block;
+  font-size: 1.6rem;
+  animation: moveArrows 1.2s ease-in-out infinite;
+  color: #3fa34d;
+}
+
+/* Arrow animation */
+@keyframes moveArrows {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade-out animation for page transition */
+.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ==================== HERO TEXT ==================== */
+.hero-text {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  color: #2d5a27;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 4;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  animation: fadeInUp 1s ease-out;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 10px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== BACKGROUND LAYERS ==================== */
+.background.mountain {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  transition: transform 1s ease-in-out;
+}
+
+.foreground.grass {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 1s ease-in-out;
+}
+
+/* ==================== PAGE TRANSITIONS ==================== */
+body:not(.loaded) .background.mountain {
+  transform: translateX(-40px);
+}
+
+body:not(.loaded) .foreground.grass {
+  transform: translateX(40px);
+}
+
+body.loaded .background.mountain,
+body.loaded .foreground.grass {
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+}
+
+/* --- Smooth fade and slide transitions --- */
+.hero-text,
+.compost-bin {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Initial fade in when page loads */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade out when transitioning away */
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* =========================== COMPOST PAGE */
+
+/* =========================== COMPOST PAGE =========================== */
+
+.compost-content {
+  position: relative;
+  z-index: 10;
+  margin-top: 120px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Shoelace compost cards with natural aesthetic */
+.compost-card::part(base) {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(60, 100, 60, 0.2);
+  border: 1px solid rgba(60, 90, 60, 0.2);
+  max-width: 750px;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.compost-card:hover::part(base) {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.compost-card h2 {
+  font-size: 1.8rem;
+  color: #2e5a2f;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.compost-card p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 85%;
+}
+
+.compost-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+.compost-card ul li {
+  margin-bottom: 0.4rem;
+  color: #2f4f2f;
+}
+
+.cycle-wrapper {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.cycle-image {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.cycle-image:hover {
+  transform: scale(1.05);
+}
+
+.caption {
+  margin-top: 0.5rem;
+  color: #4c7040;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* Natural fade-in animation for scroll reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= SCROLL REVEAL ANIMATIONS ================= */
+.compost-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.compost-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .compost-card::part(base) {
+    padding: 1rem;
+  }
+  .cycle-image {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* ========================== DO'S AND DON'TS ========================== */
+/* Do's & Don'ts Container */
+.dos-donts-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 120px auto 80px;
+  position: relative;
+  z-index: 10;
+  flex-wrap: nowrap; /* keep them side by side */
+}
+
+/* Each Card (Do’s / Don’ts) */
+.dos-card,
+.donts-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+/* Headings */
+.dos-card h2,
+.donts-card h2 {
+  font-size: 2rem;
+  color: #2b4d1c;
+  margin-bottom: 1rem;
+}
+
+/* Images */
+.dos-image,
+.dont-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 2px solid #3fa34d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Lists */
+.dos-card ul,
+.donts-card ul {
+  list-style: none;
+  padding-left: 0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .dos-donts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dos-card,
+  .donts-card {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+}
+
+.dos-card {
+  border-top: 5px solid #3fa34d;
+}
+
+.donts-card {
+  border-top: 5px solid #b71c1c;
+}
+
+/* ===== Benefits Page ===== */
+.benefits-overview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1000px;
+  margin: 140px auto 80px;
+  z-index: 10;
+  position: relative;
+  text-align: center;
+}
+
+.benefit-icon {
+  width: 100px;
+  height: auto;
+}
+
+.benefits-text h2 {
+  font-size: 2rem;
+  color: #2b4d1c;
+  margin-bottom: 0.5rem;
+}
+
+.benefits-text p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Bin Statistics Section */
+/* Bin Section Animation */
+.bin-stats-section {
+  position: relative;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bin-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.bin-image {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.stat {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s ease;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #2d5a27;
+  z-index: 1;
+}
+
+.stat1 {
+  top: -40px;
+  left: -120px;
+}
+.stat2 {
+  top: -80px;
+  right: -120px;
+}
+.stat3 {
+  top: -140px;
+  left: 40px;
+}
+
+/* Stat pointers initially hidden */
+.stat-pointer {
+  opacity: 0;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  width: 180px;
+  text-align: center;
+  color: #2b4d1c;
+}
+
+/* Specific positions (same as before) */
+.pointer-1 {
+  top: -60px;
+  left: -50px;
+}
+.pointer-2 {
+  top: -60px;
+  right: -50px;
+}
+.pointer-3 {
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Make sure carousel + stats appear above grass */
+.benefits-content,
+.bin-stats-section {
+  position: relative;
+  z-index: 15;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .benefits-overview {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bin-container {
+    width: 80%;
+  }
+
+  .stat-pointer {
+    width: 150px;
+    font-size: 0.85rem;
+  }
+
+  .pointer-1,
+  .pointer-2,
+  .pointer-3 {
+    top: auto;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+  }
+}
+
+/* ======================= TIPS PAGE */
+/* Flip Card Grid Layout */
+.flip-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 4rem 8%;
+  position: relative;
+  z-index: 15; /* ensures cards appear above grass */
+  margin-top: 8rem; /* pushes cards down from header */
+}
+
+/* Flip Card Styles */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 260px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+}
+
+.flip-card-front {
+  background: #f4f9f4;
+  color: #2d5a27;
+}
+
+.flip-card-back {
+  background: #e3f3e0;
+  color: #2d5a27;
+  transform: rotateY(180deg);
+}
+
+/* Tooltip icon styling */
+.info-icon {
+  font-size: 1.5rem;
+  color: #3fa34d;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+  .flip-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .flip-card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SHOELACE CHANGES */
+
+sl-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin: 1.5rem auto;
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+}
+
+sl-carousel-item {
+  text-align: center;
+}
+
+sl-carousel-item img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.tips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+} /* STEPS MOUNTAIN PAGE=========================== */
+.steps-container {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100vh;
+  background-color: #e8f5e9;
+  z-index: 1;
+}
+
+/* Mountain scroll wrapper */
+.mountain-scroll {
+  position: relative;
+  width: 200%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Mountain background */
+.mountain-bg {
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  filter: brightness(0.95);
+  position: relative;
+  top: 0; /* reset top so it won’t crop */
+  transition: transform 0.3s ease-out;
+}
+
+/* Step dots */
+.step-dot {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.step-dot:hover {
+  transform: scale(1.2);
+  background-color: #81c784;
+}
+
+/* Grass foreground */
+.grass-foreground {
+  position: fixed; /* sticks to viewport */
+  bottom: -300px; /* always at bottom of viewport */
+  left: 0;
+  width: 120%; /* slightly wider for parallax overflow */
+  z-index: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+}

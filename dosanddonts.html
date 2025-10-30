@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eCompost | Do's and Don'ts</title>
+
+    <!-- Shoelace Setup -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="dosanddonts-page">
+    <header class="navbar">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="compost.html">Compost</a></li>
+          <li><a href="dosanddonts.html" class="active">Do’s & Don’ts</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="steps.html">Guide</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <!-- Background elements -->
+      <img
+        src="images/mountain.jpg"
+        alt="Mountain"
+        class="background mountain"
+      />
+      <img src="images/grass.png" alt="Grass" class="foreground grass" />
+
+      <!-- Split layout -->
+      <section class="dos-donts-container">
+        <!-- Do's -->
+        <sl-card class="dos-card">
+          <h2>🌿 Do’s</h2>
+          <img src="images/do.jpg" alt="Do compost items" class="dos-image" />
+          <ul>
+            <li>✅ Add fruit and vegetable scraps</li>
+            <li>✅ Include coffee grounds and filters</li>
+            <li>✅ Mix in leaves and small branches</li>
+            <li>✅ Keep compost moist but not soaked</li>
+            <li>✅ Turn compost regularly to add air</li>
+          </ul>
+        </sl-card>
+
+        <!-- Don'ts -->
+        <sl-card class="donts-card">
+          <h2>🚫 Don’ts</h2>
+          <img
+            src="images/dont.jpg"
+            alt="Don't compost items"
+            class="dont-image"
+          />
+          <ul>
+            <li>❌ Avoid meat or dairy products</li>
+            <li>❌ Don’t compost oily or greasy foods</li>
+            <li>❌ No pet waste or diseased plants</li>
+            <li>❌ Avoid plastic, glass, or metals</li>
+            <li>❌ Don’t let compost dry out completely</li>
+          </ul>
+        </sl-card>
+      </section>
+
+      <sl-dialog label="Do's and Don'ts Tip" class="info-dialog">
+        <p>Remember: balance greens and browns for best compost quality!</p>
+        <sl-button
+          slot="footer"
+          variant="primary"
+          onclick="this.closest('sl-dialog').hide()"
+        >
+          Close
+        </sl-button>
+      </sl-dialog>
+    </main>
+
+    <script src="js/dosanddonts.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/scrollEffects.js"></script>
+  </body>
+</html>
