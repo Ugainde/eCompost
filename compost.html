@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eCompost | Compost</title>
 
-    <!-- Shoelace UI -->
+    <!-- shoelace -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
@@ -15,6 +15,12 @@
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
     ></script>
 
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -33,7 +39,6 @@
     </header>
 
     <main>
-      <!-- Backgrounds -->
       <img
         src="images/mountain.jpg"
         class="background mountain"
@@ -46,19 +51,19 @@
         alt="Grass"
       />
 
-      <!-- Compost Info Section -->
+      <!-- info section -->
       <section class="content compost-content">
         <sl-card class="compost-card">
-          <h2 slot="header">🌎 What is Composting?</h2>
+          <h2 slot="header">What is Composting?</h2>
           <p>
-            Composting is nature’s recycling system. It transforms organic
-            waste—like food scraps and garden trimmings—into nutrient-rich soil
-            that improves plant growth and supports a healthy ecosystem.
+            Composting is nature’s recycling system. It transforms organic waste
+            like food scraps and garden trimmings into nutrient-rich soil that
+            improves plant growth and supports a healthy ecosystem.
           </p>
         </sl-card>
 
         <sl-card class="compost-card">
-          <h2 slot="header">🌱 Why Should We Compost?</h2>
+          <h2 slot="header">Why Should We Compost?</h2>
           <p>
             Composting diverts waste from landfills, reduces methane emissions,
             and returns vital nutrients to the soil. It’s a small step that
@@ -67,11 +72,11 @@
         </sl-card>
 
         <sl-card class="compost-card">
-          <h2 slot="header">🔄 How Does Composting Work?</h2>
+          <h2 slot="header">How Does Composting Work?</h2>
           <p>
             Microorganisms, oxygen, and moisture break down organic matter into
-            humus—a dark, crumbly material that enriches soil. Balance “greens”
-            (like food scraps) with “browns” (like leaves or cardboard) for the
+            humus. A dark, crumbly material that enriches soil. Balance greens
+            (like food scraps) with browns (like leaves or cardboard) for the
             best results.
           </p>
 
@@ -82,14 +87,12 @@
               alt="Composting Process"
               class="cycle-image"
             />
-            <p class="caption">
-              The composting process — from waste to renewal 🌿
-            </p>
+            <p class="caption">The circle of life!</p>
           </div>
         </sl-card>
 
         <sl-card class="compost-card">
-          <h2 slot="header">🍊 What Can Be Composted?</h2>
+          <h2 slot="header">What Can Be Composted?</h2>
           <ul class="compost-list">
             <li>✔️ Fruit and vegetable peels</li>
             <li>✔️ Coffee grounds and tea bags</li>
@@ -99,11 +102,11 @@
         </sl-card>
 
         <sl-card class="compost-card">
-          <h2 slot="header">🌾 Tips for Healthy Compost</h2>
+          <h2 slot="header">Tips for Healthy Compost</h2>
           <p>
             Keep your compost moist but not soggy, turn it regularly for
             aeration, and maintain a 3:1 ratio of browns to greens. Patience is
-            key—nature takes time to create something valuable.
+            key, nature takes time to create something valuable.
           </p>
         </sl-card>
       </section>
@@ -112,5 +115,6 @@
     <script src="js/transition.js"></script>
     <script src="js/scrollEffects.js"></script>
     <script src="js/compost.js"></script>
+    <script src="js/loadingSlide.js"></script>
   </body>
 </html>

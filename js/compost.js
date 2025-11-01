@@ -1,4 +1,4 @@
-// Smooth Compost Cycle Animation 🌱
+// compost cycle animation using images
 const images = [
   "images/food.png",
   "images/foodscraps.png",
@@ -10,42 +10,29 @@ const images = [
 let index = 0;
 const cycleImage = document.getElementById("cycleImage");
 
-// Apply smooth transition styles
+// smooth transition styling
 cycleImage.style.transition =
   "opacity 1.5s ease-in-out, transform 1.2s ease-in-out";
 
 function changeImage() {
-  // Fade out smoothly
+  // fades out
   cycleImage.style.opacity = "0";
   cycleImage.style.transform = "scale(1.05)";
 
   setTimeout(() => {
-    // Change to next image mid-fade
+    // switches to next image
     index = (index + 1) % images.length;
     cycleImage.src = images[index];
 
-    // Fade back in smoothly
+    // fades in
     cycleImage.style.opacity = "1";
     cycleImage.style.transform = "scale(1)";
-  }, 1500); // halfway point in transition
+  }, 1500);
 }
 
-// Start gentle looping
 setInterval(changeImage, 4000); // 4 seconds per stage
 
-// // Grass slide-in transition on load
-// window.addEventListener("load", () => {
-//   const grass = document.getElementById("grass");
-//   grass.style.transform = "translateX(0)";
-// });
-
-// // Slight mountain shift for subtle motion
-// window.addEventListener("DOMContentLoaded", () => {
-//   const mountain = document.querySelector(".mountain");
-//   mountain.style.transform = "translateX(20px)";
-// });
-
-// Scroll-triggered fade-in for compost cards
+// scroll-triggered fade-in for compost cards
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".compost-card");
 
@@ -54,12 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // animate only once
+          observer.unobserve(entry.target); // keeps it visible
         }
       });
     },
     {
-      threshold: 0.2, // reveal when 20% visible
+      threshold: 0.2, // threshold for when to make it visible
     }
   );
 

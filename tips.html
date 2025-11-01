@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eCompost | Tips</title>
 
-    <!-- Shoelace Setup -->
+    <!-- shoelace -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
@@ -15,6 +15,12 @@
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
     ></script>
 
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="tips-page">
@@ -31,12 +37,12 @@
       </nav>
     </header>
 
-    <!-- Background -->
+    <!-- background -->
     <img src="images/mountain.jpg" alt="Mountain" class="background mountain" />
     <img src="images/grass.png" alt="Grass" class="foreground grass" />
     <main>
       <section class="flip-card-container">
-        <!-- 6 Flip Cards (2 rows x 3 columns) -->
+        <!-- flip cards -->
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -47,8 +53,9 @@
                 Don't add meat or dairy, avoid plastic, and turn your compost
                 regularly.
               </p>
+              <!-- extra shoelace tooltip for more information -->
               <sl-tooltip
-                content="Avoiding these mistakes ensures your compost decomposes properly and remains odor-free."
+                content="Avoiding these mistakes ensures your compost decomposes properly and remains odour-free."
               >
                 <sl-icon name="info-circle" class="info-icon"></sl-icon>
               </sl-tooltip>
@@ -118,7 +125,7 @@
             <div class="flip-card-back">
               <p>Keep compost moist like a damp sponge, not soaked.</p>
               <sl-tooltip
-                content="Too much moisture blocks airflow; too little slows decomposition."
+                content="Too much moisture blocks airflow. Too little slows decomposition. Aim for the perfect amount!"
               >
                 <sl-icon name="info-circle" class="info-icon"></sl-icon>
               </sl-tooltip>
@@ -150,5 +157,6 @@
     <script src="js/tips.js"></script>
     <script src="js/transition.js"></script>
     <script src="js/scrollEffects.js"></script>
+    <script src="js/loadingSlide.js"></script>
   </body>
 </html>

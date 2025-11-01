@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ECompost | Home</title>
 
-    <!-- Shoelace Setup -->
+    <!-- shoelace -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
@@ -16,52 +16,77 @@
     ></script>
 
     <!-- GSAP -->
-    <script src="libs/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
-    <!-- Styles -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <!-- 🌿 NAVIGATION -->
-    <header class="navbar">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="compost.html">Compost</a></li>
-          <li><a href="dosanddonts.html">Do’s & Don’ts</a></li>
-          <li><a href="benefits.html">Benefits</a></li>
-          <li><a href="tips.html">Tips</a></li>
-          <li><a href="steps.html">Guide</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="leaf-container">
+      <!-- navigation bar -->
+      <header class="navbar">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="compost.html">Compost</a></li>
+            <li><a href="dosanddonts.html">Do’s & Don’ts</a></li>
+            <li><a href="benefits.html">Benefits</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="steps.html">Guide</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <!-- 🏔️ HERO SECTION -->
-    <section class="hero">
-      <img
-        src="images/mountain.jpg"
-        alt="Mountain background"
-        class="mountain"
-      />
-      <img src="images/compostbin.png" alt="Compost bin" class="compost-bin" />
-      <img src="images/grass.png" alt="Grass foreground" class="grass" />
+      <!-- main hero section -->
+      <section class="hero">
+        <img
+          src="images/mountain.jpg"
+          alt="Mountain background"
+          class="mountain"
+        />
+        <img src="images/bird.png" alt="Bird" class="bird" />
+        <img
+          src="images/compostbin.png"
+          alt="Compost bin"
+          class="compost-bin"
+        />
 
-      <div class="hero-text">
-        <h1 class="title">ECompost</h1>
-        <p class="subtitle">Start your journey - Every Person Matters</p>
+        <!-- SVG leaf animation -->
+        <svg
+          class="falling-leaf"
+          viewBox="0 0 64 64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 2C20 10 10 22 10 36c0 14 10 26 22 26s22-12 22-26C54 22 44 10 32 2z"
+            fill="#7ab24f"
+          />
+        </svg>
+
+        <img src="images/grass.png" alt="Grass foreground" class="grass" />
+
+        <div class="hero-text">
+          <h1 class="title">ECOmpost</h1>
+          <p class="subtitle">
+            Start your composting journey. Every person matters.
+          </p>
+        </div>
+      </section>
+
+      <div class="click-start">
+        <p>Click anywhere to get started</p>
+        <span class="arrow">≫≫≫</span>
       </div>
-    </section>
 
-    <div class="click-start">
-      <p>Click anywhere to get started</p>
-      <span class="arrow">≫≫≫</span>
+      <!-- javascript -->
+      <script src="js/main.js"></script>
+      <script src="js/animations.js"></script>
+      <script src="js/transition.js"></script>
+      <script src="js/scrollEffects.js"></script>
+      <script src="js/loadingSlide.js"></script>
     </div>
-
-    <!-- JS -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/transition.js"></script>
-    <script src="js/scrollEffects.js"></script>
   </body>
 </html>

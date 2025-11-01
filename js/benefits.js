@@ -1,4 +1,4 @@
-// Animate statistics appearing as user scrolls to bin section
+// animation for statistics appearing as the user scrolls to bin section
 document.addEventListener("scroll", () => {
   const section = document.querySelector(".bin-stats-section");
   const stats = document.querySelectorAll(".stat");
@@ -14,7 +14,7 @@ document.addEventListener("scroll", () => {
     });
   } else {
     stats.forEach((stat) => {
-      stat.style.opacity = "0";
+      stat.style.opacity = "0"; // make invisible if not in view
       stat.style.transform = "translateY(0)";
     });
   }

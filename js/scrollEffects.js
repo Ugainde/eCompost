@@ -1,30 +1,33 @@
-// scrollEffects.js
+// parallax depth effect for scrolling through the grass and mountain
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const mountain = document.querySelector(".background.mountain");
   const grass = document.querySelector(".foreground.grass");
 
-  let lastScrollY = 0;
-
-  function handleScroll() {
-    const scrollY = window.scrollY;
-    const diff = scrollY - lastScrollY;
-    lastScrollY = scrollY;
-
-    // Parallax speed multipliers
-    const mountainSpeed = 0.15; // slower for distant effect
-    const grassSpeed = 0.3; // faster for foreground
-
-    // Apply transformations
-    if (mountain) {
-      mountain.style.transform = `translateY(${scrollY * mountainSpeed}px)`;
-    }
-
-    if (grass) {
-      grass.style.transform = `translateY(${scrollY * grassSpeed}px)`;
-    }
-
-    requestAnimationFrame(handleScroll);
+  if (mountain) {
+    gsap.to(mountain, {
+      y: () => window.innerHeight * 0.15, // lower ratio/speed for mountain
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
   }
 
-  requestAnimationFrame(handleScroll);
+  if (grass) {
+    gsap.to(grass, {
+      y: () => window.innerHeight * 0.3,
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+  }
 });

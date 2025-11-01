@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eCompost | Do's and Don'ts</title>
 
-    <!-- Shoelace Setup -->
+    <!-- shoelace -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
@@ -15,6 +15,12 @@
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
     ></script>
 
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -33,7 +39,7 @@
     </header>
 
     <main class="content">
-      <!-- Background elements -->
+      <!-- background -->
       <img
         src="images/mountain.jpg"
         alt="Mountain"
@@ -41,9 +47,8 @@
       />
       <img src="images/grass.png" alt="Grass" class="foreground grass" />
 
-      <!-- Split layout -->
+      <!-- split layout for do's and dont's -->
       <section class="dos-donts-container">
-        <!-- Do's -->
         <sl-card class="dos-card">
           <h2>🌿 Do’s</h2>
           <img src="images/do.jpg" alt="Do compost items" class="dos-image" />
@@ -56,7 +61,6 @@
           </ul>
         </sl-card>
 
-        <!-- Don'ts -->
         <sl-card class="donts-card">
           <h2>🚫 Don’ts</h2>
           <img
@@ -73,21 +77,11 @@
           </ul>
         </sl-card>
       </section>
-
-      <sl-dialog label="Do's and Don'ts Tip" class="info-dialog">
-        <p>Remember: balance greens and browns for best compost quality!</p>
-        <sl-button
-          slot="footer"
-          variant="primary"
-          onclick="this.closest('sl-dialog').hide()"
-        >
-          Close
-        </sl-button>
-      </sl-dialog>
     </main>
 
     <script src="js/dosanddonts.js"></script>
     <script src="js/transition.js"></script>
     <script src="js/scrollEffects.js"></script>
+    <script src="js/loadingSlide.js"></script>
   </body>
 </html>
